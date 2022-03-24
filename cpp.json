@@ -33,7 +33,7 @@
 	"getprot": {
 		"prefix": "getprot",
 		"body": [
-				"${1:int}\tget${2:Value}( void ) const;${3}",
+				"${1:int}\tget${2:Value}( void ) const;${3}"
 		],
 		"description": "Getter prototype with 42 style!"
 	},
@@ -44,21 +44,21 @@
 				"",
 				"\tthis->_${3:value} = ${3:value};",
 				"\treturn ;",
-				"}",
+				"}"
 		],
 		"description": "Getter with 42 style!"
 	},
 	"setprot": {
 		"prefix": "getprot",
 		"body": [
-			"void\tset${0:Value}( ${1:void}${0:value} ){${3}",
+			"void\tset${0:Value}( ${1:void}${0:value} ){${3}"
 		],
 		"description": "Getter prototype with 42 style!"
 	},
 	"prot": {
 		"prefix": "prot",
 		"body": [
-			"${1:void}\t${3:method}( ${4:void} )${5};",
+			"${1:void}\t${3:method}( ${4:void} )${5};"
 		],
 		"description": "Prototype with 42 style!"
 	},
@@ -76,7 +76,7 @@
 	"<<prot": {
 		"prefix": "<<prot",
 		"body": [
-			"std::ostream &  operator<<( std::ostream & o, ${1:$TM_FILENAME_BASE} const & f );${2}",
+			"std::ostream &  operator<<( std::ostream & o, ${1:$TM_FILENAME_BASE} const & f );${2}"
 		],
 		"description": "Getter prototype with 42 style!"
 	},
@@ -89,6 +89,29 @@
 			"",
 			"\treturn (o);",
 			"}${3}"
+		],
+		"description": "Getter prototype with 42 style!"
+	},
+	"constructor": {
+		"prefix": "constructor",
+		"body": [
+			"$TM_FILENAME_BASE::$TM_FILENAME_BASE( ${2:void} )${3}\t{",
+			"",
+			"\tstd::cout << \"Form ${1:default} constructor\" << std::endl;",
+			"\treturn ;",
+			"}${4}"
+		],
+		"description": "Getter prototype with 42 style!"
+	},
+	"class exception": {
+		"prefix": "eclass",
+		"body": [
+			"class ${1:some}Exception : public std::exception\t{",
+			"\tpublic:",
+			"\t\tvirtual const\tchar* what() const throw()\t{",
+			"\t\t\treturn (\"${2:Error message}\");",
+			"\t\t}",
+			"};${3}"
 		],
 		"description": "Getter prototype with 42 style!"
 	},
@@ -238,5 +261,5 @@
 			"/* END COPLIEN */"
 		],
 		"description": "All you need for your coplien!"
-	},
+	}
 }

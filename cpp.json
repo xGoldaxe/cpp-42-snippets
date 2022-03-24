@@ -1,0 +1,242 @@
+{
+	"DecoLine": {
+		"prefix": "decoline",
+		"body": [
+			"std::cout << \"<-----------{${1}}----------->\" << std::endl;${2}"
+		],
+		"description": "Fast line decoration!"
+	},
+	"Main": {
+		"prefix": "maincpp",
+		"body": [
+			"#include <iostream>",
+			"",
+			"int main( void ) {",
+			"",
+			"\t${0:/* CODE HERE */}",
+			"",
+			"\treturn (0);",
+			"}"
+		],
+		"description": "Main with 42 style!"
+	},
+	"Getter": {
+		"prefix": "getter",
+		"body": [
+				"${1:int}\t${2:$TM_FILENAME_BASE}::get${3:Value}( void ) const\t{",
+				"",
+				"\treturn ( this->_${4:value} );",
+				"}"
+		],
+		"description": "Getter with 42 style!"
+	},
+	"getprot": {
+		"prefix": "getprot",
+		"body": [
+				"${1:int}\tget${2:Value}( void ) const;${3}",
+		],
+		"description": "Getter prototype with 42 style!"
+	},
+	"Setter": {
+		"prefix": "setter",
+		"body": [
+				"void\t$TM_FILENAME_BASE::set${1:Value}( ${2:void} ${3:value} )\t{",
+				"",
+				"\tthis->_${3:value} = ${3:value};",
+				"\treturn ;",
+				"}",
+		],
+		"description": "Getter with 42 style!"
+	},
+	"setprot": {
+		"prefix": "getprot",
+		"body": [
+			"void\tset${0:Value}( ${1:void}${0:value} ){${3}",
+		],
+		"description": "Getter prototype with 42 style!"
+	},
+	"prot": {
+		"prefix": "prot",
+		"body": [
+			"${1:void}\t${3:method}( ${4:void} )${5};",
+		],
+		"description": "Prototype with 42 style!"
+	},
+	"method": {
+		"prefix": "method",
+		"body": [
+			"${1:void}\t${2:$TM_FILENAME_BASE}::${3:method}( ${4:void} )\t{",
+			"",
+			"\t${5:/* CODE HERE */}",
+			"\treturn ;",
+			"}"
+		],
+		"description": "method with 42 style!"
+	},
+	"<<prot": {
+		"prefix": "<<prot",
+		"body": [
+			"std::ostream &  operator<<( std::ostream & o, ${1:$TM_FILENAME_BASE} const & f );${2}",
+		],
+		"description": "Getter prototype with 42 style!"
+	},
+	"<<func": {
+		"prefix": "<<func",
+		"body": [
+			"std::ostream &  operator<<( std::ostream & o, ${1:$TM_FILENAME_BASE} const & f ) {",
+			"",
+			"\tstd::cout << ${2:\"\"} << std::endl;",
+			"",
+			"\treturn (o);",
+			"}${3}"
+		],
+		"description": "Getter prototype with 42 style!"
+	},
+	"Coplien class": {
+		"prefix": "cclass",
+		"body": [
+				"#ifndef ${TM_FILENAME_BASE/(.*)/${0:/upcase}/}_HPP",
+				"#\tdefine ${TM_FILENAME_BASE/(.*)/${0:/upcase}/}_HPP",
+				"",
+				"#include <iostream>",
+				"#include <string>",
+				"",
+				"class ${0:$TM_FILENAME_BASE}",
+				"{",
+				"",
+				"\tprivate:",
+				"",
+				"\tpublic:",
+				"\t\t/* coplien */",
+				"\t\t${0:$TM_FILENAME_BASE}( void );",
+				"\t\t${0:$TM_FILENAME_BASE}( ${0:$TM_FILENAME_BASE} const &src );",
+				"\t\t~${0:$TM_FILENAME_BASE}( void );",
+				"",
+				"\t\t${0:$TM_FILENAME_BASE} &   operator=( ${0:$TM_FILENAME_BASE} const & rhs );",
+				"\t\t/* end coplien */",
+				"};",
+				"",
+				"",
+				"#endif"
+		],
+		"description": "Coplien class with 42 style!"
+	},
+	"Extend Coplien class": {
+		"prefix": "cclasse",
+		"body": [
+				"#ifndef ${TM_FILENAME_BASE/(.*)/${0:/upcase}/}_HPP",
+				"#\tdefine ${TM_FILENAME_BASE/(.*)/${0:/upcase}/}_HPP",
+				"",
+				"#include <iostream>",
+				"#include <string>",
+				"",
+				"class ${0:$TM_FILENAME_BASE}",
+				"{",
+				"",
+				"\tprivate:",
+				"",
+				"\tpublic:",
+				"\t\t/* coplien */",
+				"\t\t${0:$TM_FILENAME_BASE}( void );",
+				"\t\t${0:$TM_FILENAME_BASE}( ${0:$TM_FILENAME_BASE} const &src );",
+				"\t\t~${0:$TM_FILENAME_BASE}( void );",
+				"",
+				"\t\t${0:$TM_FILENAME_BASE} &   operator=( ${0:$TM_FILENAME_BASE} const & rhs );",
+				"\t\t/* end coplien */",
+				"",
+				"\t\t/* Getters */",
+				"",
+				"\t\t/* Setters */",
+				"",
+				"};",
+				"",
+				"",
+				"#endif"
+		],
+		"description": "Coplien class with 42 style!"
+	},
+	"Coplien cpp commented": {
+		"prefix": "dclasscom",
+		"body": [
+			"#include <iostream>",
+			"#include <string>",
+			"#include \"${0:$TM_FILENAME_BASE}.hpp\"",
+			"",
+			"/* COPLIEN */",
+			"",
+			"${0:$TM_FILENAME_BASE}::${0:$TM_FILENAME_BASE}( void )\t{",
+			"",
+			"\tstd::cout << \"${0:$TM_FILENAME_BASE} default constructor\" << std::endl;",
+			"\treturn ;",
+			"}",
+			"",
+			"${0:$TM_FILENAME_BASE}::~${0:$TM_FILENAME_BASE}( void ) {",
+			"",
+			"\tstd::cout << \"${0:$TM_FILENAME_BASE} destructor\" << std::endl;",
+			"\treturn ;",
+			"}",
+			"",
+			"${0:$TM_FILENAME_BASE}::${0:$TM_FILENAME_BASE}( ${0:$TM_FILENAME_BASE} const &src )\t{",
+			"",
+			"\tstd::cout << \"${0:$TM_FILENAME_BASE} copy constructor\" << std::endl;",
+			"\t*this = src;",
+			"\t",
+			"\treturn ;",
+			"}",
+			"",
+			"${0:$TM_FILENAME_BASE} &\t${0:$TM_FILENAME_BASE}::operator=( ${0:$TM_FILENAME_BASE} const & rhs )\t{",
+			"",
+			"\tstd::cout << \"${0:$TM_FILENAME_BASE} assignement operator\" << std::endl;",
+			"\tif ( this != &rhs ) {",
+			"",
+			"\t\t/* copy everything */",
+			"\t}",
+			"",
+			"\treturn (*this);",
+			"}",
+			"",
+			"/* END COPLIEN */"
+		],
+		"description": "All you need for your coplien!"
+	},
+	"Coplien cpp": {
+		"prefix": "dclass",
+		"body": [
+			"#include <iostream>",
+			"#include <string>",
+			"#include \"${0:$TM_FILENAME_BASE}.hpp\"",
+			"",
+			"/* COPLIEN */",
+			"",
+			"${0:$TM_FILENAME_BASE}::${0:$TM_FILENAME_BASE}( void )\t{",
+			"",
+			"\treturn ;",
+			"}",
+			"",
+			"${0:$TM_FILENAME_BASE}::~${0:$TM_FILENAME_BASE}( void ) {",
+			"",
+			"\treturn ;",
+			"}",
+			"",
+			"${0:$TM_FILENAME_BASE}::${0:$TM_FILENAME_BASE}( ${0:$TM_FILENAME_BASE} const &src )\t{",
+			"",
+			"\t*this = src;",
+			"\t",
+			"\treturn ;",
+			"}",
+			"",
+			"${0:$TM_FILENAME_BASE} &\t${0:$TM_FILENAME_BASE}::operator=( ${0:$TM_FILENAME_BASE} const & rhs )\t{",
+			"",
+			"\tif ( this != &rhs ) {",
+			"",
+			"\t\t/* copy everything */",
+			"\t}",
+			"",
+			"\treturn (*this);",
+			"}",
+			"",
+			"/* END COPLIEN */"
+		],
+		"description": "All you need for your coplien!"
+	},
+}
